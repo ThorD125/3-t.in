@@ -12,41 +12,98 @@ html {
   width: 210mm;
   margin: auto;
   padding: 30px;
-  font-size: 14px;
+  font-size: 1.25vh;
+  font-size: 12px;
+  /* font-size: 14px; */
+  size: 100vh;
 }
 
-h1,h3,h4 {
+h1,
+h3,
+h4 {
   font-style: bold;
   font-weight: 700;
 }
 
-h2, span {
+h2,
+span {
   font-style: normal;
   font-weight: 300;
 }
 
-a { 
+a {
   text-decoration: underline;
 }
 
 h1 {
   font-size: 2.5rem;
 }
+
 h2 {
   font-size: 1.5rem;
 }
+
 h3 {
   font-size: 1.16rem;
 }
+
 h4 {
   font-size: 1rem;
 }
-p, li, a {
+
+p,
+li,
+a {
   font-size: 1rem;
 }
+
 span {
   font-size: 0.91rem;
 }
+
+.spacewidth {
+  width: 10px;
+}
+
+.spaceheight {
+  height: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.lefbody {
+  width: calc((100% - 20px) / 495 * (75 + 265));
+}
+
+.rightbody {
+  width: calc((100% - 20px) / 495 * 155);
+}
+
+
+.date {
+  width: calc((100% - 20px) / 340 * 75);
+}
+
+.description {
+  width: calc((100% - 20px) / 340 * 265);
+}
+
+.footerleft {
+  width: calc((100% - 20px) / 495 * 75);
+}
+.socialqr {
+  width: calc((100% - 20px) / 155 *  70);
+}
+
+li {
+  display: list-item;
+  list-style-type: disc;
+  width: calc(100% - 15px);
+  margin-left: 15px;
+}
+/* 
 
 /* .poppins-thin {
   font-family: "Poppins", sans-serif;

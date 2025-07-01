@@ -1,5 +1,5 @@
-import CyberSecurityNotes from '../assets/images/Cyber-Security-Notes.png'
-import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.png'
+import CyberSecurityNotes from '../assets/images/CyberResearchNotes.svg'
+import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.svg'
 import GitHub from '../assets/images/GitHub.svg'
 import LinkedIn from '../assets/images/LinkedIn.svg'
 
@@ -17,22 +17,22 @@ export default function Home() {
 }
 
 function spacex() {
-  return <div className={`w-[10px]${debug ? " bg-green-500" : ""}`}></div>;
+  return <div className={`spacewidth${debug ? " bg-green-500" : ""}`}></div>;
 }
 
 function spacey() {
-  return <div className={`h-[10px]${debug ? " bg-red-500" : ""}`}></div>;
+  return <div className={`spaceheight${debug ? " bg-red-500" : ""}`}></div>;
 }
 
 
 function Header() {
   return <div className="flex justify-between">
-    <div className="w-36/54">
+    <div>
       <h1>Thor Demeestere</h1>
       <h2>Developer & Cyber Security Researcher</h2>
       <span>°05/05/2003</span>
     </div>
-    <div className="w-18/54 text-right mt-auto">
+    <div className="text-right mt-auto">
       <p>+32 0489 71 44 63</p>
       <p>thor.demeestere@gmail.com</p>
       <p>Menen, Driver license B</p>
@@ -41,13 +41,13 @@ function Header() {
 }
 
 function Body() {
-  return <div className="flex justify-between">
-    <div className="w-36/54">
+  return <div className="flex w-full">
+    <div className="lefbody">
       {BodyLeft()}
     </div>
     {spacex()}
     {spacex()}
-    <div className="w-16/54 ml-2/54">
+    <div className="rightbody">
       {BodyRight()}
     </div>
   </div>
@@ -57,70 +57,79 @@ function Footer() {
   return <div>
 
     <a href="https://github.com/ThorD125">GitHub</a>
-    <div className="flex">
-    <img src={GitHub} alt="github qr" className="w-8/54"/>
-    {spacex()}
-    <p className="w-44/54">
-      Other projects are available on my GitHub, including:
-      - Chrome extension to auto-play Shorts/Reels
-      - Quiz training platform with randomized questions and answers
-      - A Python-based Discord utility bot with various slash commands.
-    </p>
+    <div className="flex pt-2">
+      <div className='footerleft'>
+        <img src={GitHub} alt="github qr" />
+      </div>
+      {spacex()}
+      {spacex()}
+      <div className='w-full m-auto'>
+        <p>
+          Other projects are available on my GitHub, including:
+        </p>
+        <ul className='list-disc'>
+          <li>Chrome extension to auto-play Shorts/Reels</li>
+          <li>Quiz training platform with randomized questions and answers</li>
+          <li>A Python-based Discord utility bot with various slash commands.</li>
+        </ul>
+      </div>
     </div>
   </div>
 }
 
 function Experience(date, title, description) {
   return <div>
-   <div className="flex">
-    <div className="w-8/36">
-    <p>
-      {date}
-    </p>
+
+    <div className="flex">
+      <div className="date">
+        <p>
+          {date}
+        </p>
+      </div>
+      {spacex()}
+      {spacex()}
+      <div className="description">
+        <h4>{title}</h4>
+        <p>{description}</p>
+      </div>
     </div>
-    {spacex()}
-    {spacex()}
-    <div className="w-26/36">
-      <h4>{title}</h4>
-      <p className="w-full">{description}</p>
-    </div>
-  </div>
     {spacey()}
   </div>
 }
+
 function Education(date, title, subtitle, description) {
 
   return <div>
     <div className="flex">
-      <div className="w-8/36">
-      <p>
-        {date}
-      </p>
+      <div className="date">
+        <p>
+          {date}
+        </p>
       </div>
       {spacex()}
       {spacex()}
-      <div className="w-26/36">
+      <div className="description">
         <h4>{title}</h4>
-        <p className="w-full">{subtitle}</p>
-        <p className="w-full">{description}</p>
+        <p>{subtitle}</p>
+        <p>{description}</p>
       </div>
     </div>
     {spacey()}
   </div>
-
 }
 
-function project(img, title, description, link){
-    return <div>
+function project(img, title, description, link) {
+  return <div>
     <div className="flex">
-      <div className="w-8/36">
+      <div className="date p-6">
         <img src={img} alt="projectimage" />
       </div>
-      <div className="w-2/36"></div>
-      <div className="w-26/36">
+      {spacex()}
+      {spacex()}
+      <div className="description">
         <h4>{title}</h4>
-        <p className="w-full">{description}</p>
-        <p className="w-full"><a href={link}>{link}</a></p>
+        <p>{description}</p>
+        <p><a href={link}>{link}</a></p>
       </div>
     </div>
     {spacey()}
@@ -128,8 +137,7 @@ function project(img, title, description, link){
 }
 
 function BodyLeft() {
-  return <div>
-
+  return <div className='w-full'>
     <h3>Experience</h3>
     {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer")}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
@@ -144,8 +152,9 @@ function BodyLeft() {
     {spacey()}
 
     <h3>Personal projects</h3>
-    {project(CyberSecurityNotes, "Cyber Security Research Notes","", "https://github.com/ThorD125/research-notes")}
-    {project(TryHackmeLabs, "TryHackMe Cyber Labs","Hands-on cybersecurity training through virtual labs and challenges.","https://tryhackme.com/p/ThorD125")}
+    {project(CyberSecurityNotes, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes")}
+    {project(TryHackmeLabs, "TryHackMe Cyber Labs", "Hands-on cybersecurity training through virtual labs and challenges.", "https://tryhackme.com/p/ThorD125")}
+    {spacey()}
   </div>
 }
 
@@ -198,6 +207,8 @@ function BodyRight() {
 
     <h3>Socials</h3>
     <a href="https://www.linkedin.com/in/thor-demeestere/">LinkedIn</a>
-    <img src={LinkedIn} alt="linkedin qr" className="w-8/16"/>
+    <div className="socialqr pt-2">
+      <img src={LinkedIn} alt="linkedin qr" />
+    </div>
   </div>
 }
