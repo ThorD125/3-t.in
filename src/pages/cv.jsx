@@ -3,7 +3,7 @@ import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.png'
 import GitHub from '../assets/images/GitHub.svg'
 import LinkedIn from '../assets/images/LinkedIn.svg'
 
-var debug = true;
+var debug = false;
 
 export default function Home() {
   return <div className={debug ? "bg-blue-500" : ""}>
@@ -32,7 +32,7 @@ function Header() {
       <h2>Developer & Cyber Security Researcher</h2>
       <span>°05/05/2003</span>
     </div>
-    <div className="w-18/54 text-right">
+    <div className="w-18/54 text-right mt-auto">
       <p>+32 0489 71 44 63</p>
       <p>thor.demeestere@gmail.com</p>
       <p>Menen, Driver license B</p>
