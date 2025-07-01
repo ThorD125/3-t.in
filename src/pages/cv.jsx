@@ -1,30 +1,36 @@
+import CyberSecurityNotes from '../assets/images/Cyber-Security-Notes.png'
+import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.png'
+import GitHub from '../assets/images/GitHub.svg'
+import LinkedIn from '../assets/images/LinkedIn.svg'
+
+var debug = true;
+
 export default function Home() {
-  return <div>
+  return <div className={debug ? "bg-blue-500" : ""}>
     {Header()}
-    {spacey2()}
+    {spacey()}
+    {spacey()}
     {Body()}
-    {spacey2()}
+    {spacey()}
     {Footer()}
   </div>
 }
 
-function spacex(x = 2) {
-  return <div className={`w-${x}/54`}></div>;
+function spacex() {
+  return <div className={`w-[10px]${debug ? " bg-green-500" : ""}`}></div>;
 }
-function spacey1() {
-  return <div className={`h-[10px]`}></div>;
-}
-function spacey2() {
-  return <div className={`h-[20px]`}></div>;
+
+function spacey() {
+  return <div className={`h-[10px]${debug ? " bg-red-500" : ""}`}></div>;
 }
 
 
 function Header() {
-  return <div className="flex content-between">
+  return <div className="flex justify-between">
     <div className="w-36/54">
       <h1>Thor Demeestere</h1>
       <h2>Developer & Cyber Security Researcher</h2>
-      <p className="text-small">°05/05/2003</p>
+      <span>°05/05/2003</span>
     </div>
     <div className="w-18/54 text-right">
       <p>+32 0489 71 44 63</p>
@@ -35,10 +41,11 @@ function Header() {
 }
 
 function Body() {
-  return <div className="flex">
+  return <div className="flex justify-between">
     <div className="w-36/54">
       {BodyLeft()}
     </div>
+    {spacex()}
     {spacex()}
     <div className="w-16/54 ml-2/54">
       {BodyRight()}
@@ -49,9 +56,9 @@ function Body() {
 function Footer() {
   return <div>
 
-    <a href="">GitHub</a>
+    <a href="https://github.com/ThorD125">GitHub</a>
     <div className="flex">
-    <img src="" alt="github qr" className="w-8/54"/>
+    <img src={GitHub} alt="github qr" className="w-8/54"/>
     {spacex()}
     <p className="w-44/54">
       Other projects are available on my GitHub, including:
@@ -67,15 +74,18 @@ function Experience(date, title, description) {
   return <div>
    <div className="flex">
     <div className="w-8/36">
+    <p>
       {date}
+    </p>
     </div>
-    <div className="w-2/36"></div>
+    {spacex()}
+    {spacex()}
     <div className="w-26/36">
-      <h3>{title}</h3>
+      <h4>{title}</h4>
       <p className="w-full">{description}</p>
     </div>
   </div>
-    {spacey2()}
+    {spacey()}
   </div>
 }
 function Education(date, title, subtitle, description) {
@@ -83,16 +93,19 @@ function Education(date, title, subtitle, description) {
   return <div>
     <div className="flex">
       <div className="w-8/36">
+      <p>
         {date}
+      </p>
       </div>
-      <div className="w-2/36"></div>
+      {spacex()}
+      {spacex()}
       <div className="w-26/36">
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p className="w-full">{subtitle}</p>
         <p className="w-full">{description}</p>
       </div>
     </div>
-    {spacey2()}
+    {spacey()}
   </div>
 
 }
@@ -101,47 +114,51 @@ function project(img, title, description, link){
     return <div>
     <div className="flex">
       <div className="w-8/36">
-        <img src="{img}" alt="projectimage" />
+        <img src={img} alt="projectimage" />
       </div>
       <div className="w-2/36"></div>
       <div className="w-26/36">
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p className="w-full">{description}</p>
-        <p className="w-full">{link}</p>
+        <p className="w-full"><a href={link}>{link}</a></p>
       </div>
     </div>
-    {spacey2()}
+    {spacey()}
   </div>
 }
 
 function BodyLeft() {
   return <div>
 
-    <h2>Experience</h2>
-    {Experience("09/24-03/25", "Savaco", "Servicedesk & Support Engineer")}
+    <h3>Experience</h3>
+    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer")}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
     {Experience("03/21-08/22", "Tom Broucke", "Assisted a freelance WordPress web developer, learned modern web design principles and contributed to building and maintaining websites.")}
     {Experience("", "Various personal projects", "")}
 
-    <h2>Education</h2>
+    {spacey()}
+
+    <h3>Education</h3>
     {Education("08/21-06/24", "Bachelor Cyber Security Professional", "Applied Computer Science", "Howest Bruges - University of Applied Sciences Technology")}
 
-    <h2>Personal projects</h2>
-    {project("", "Cyber Security Research Notes","", "https://github.com/ThorD125/research-notes")}
-    {project("", "TryHackMe Cyber Labs","Hands-on cybersecurity training through virtual labs and challenges.","https://tryhackme.com/p/ThorD125")}
+    {spacey()}
+
+    <h3>Personal projects</h3>
+    {project(CyberSecurityNotes, "Cyber Security Research Notes","", "https://github.com/ThorD125/research-notes")}
+    {project(TryHackmeLabs, "TryHackMe Cyber Labs","Hands-on cybersecurity training through virtual labs and challenges.","https://tryhackme.com/p/ThorD125")}
   </div>
 }
 
 function BodyRight() {
   return <div>
 
-    <h2>Languages</h2>
-    NL Dutch - Native
-    EN English - Fluent
+    <h3>Languages</h3>
+    <p>NL Dutch - Native</p>
+    <p>EN English - Fluent</p>
 
-    {spacey2()}
+    {spacey()}
 
-    <h2>Skills</h2>
+    <h3>Skills</h3>
     <ul>
       <li>Docker</li>
       <li>Linux</li>
@@ -153,9 +170,9 @@ function BodyRight() {
       <li>Eager to learn</li>
     </ul>
 
-    {spacey2()}
+    {spacey()}
 
-    <h2>Certifications</h2>
+    <h3>Certifications</h3>
     <ul>
       <li>FIRST CVSS v4.0</li>
       <li>LogicMonitor Associate</li>
@@ -165,9 +182,9 @@ function BodyRight() {
       <li>FCA FortiGate Operator</li>
     </ul>
 
-    {spacey2()}
+    {spacey()}
 
-    <h2>Interests</h2>
+    <h3>Interests</h3>
     <ul>
       <li>Security</li>
       <li>Music</li>
@@ -177,10 +194,10 @@ function BodyRight() {
       <li>Development</li>
     </ul>
 
-    {spacey2()}
+    {spacey()}
 
-    <h2>Socials</h2>
-    <a href="">LinkedIn</a>
-    <img src="" alt="linkedin qr" className="w-8/16"/>
+    <h3>Socials</h3>
+    <a href="https://www.linkedin.com/in/thor-demeestere/">LinkedIn</a>
+    <img src={LinkedIn} alt="linkedin qr" className="w-8/16"/>
   </div>
 }

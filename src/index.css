@@ -25,14 +25,43 @@ html {
   width: 210mm;
   margin: auto;
   padding: 30px;
+  font-size: 12px;
 }
 
-h1,h2,h3 {
+h1,h3,h4 {
   font-style: bold;
   font-weight: 700;
 }
 
-.poppins-thin {
+h2, span {
+  font-style: normal;
+  font-weight: 300;
+}
+
+a { 
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 14px;
+}
+h4 {
+  font-size: 12px;
+}
+p, li, a {
+  font-size: 12px;
+}
+span {
+  font-size: 11px;
+}
+
+/* .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -138,4 +167,4 @@ h1,h2,h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
-}
+} */
