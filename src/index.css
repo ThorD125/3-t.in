@@ -16,9 +16,9 @@
 }
 
 .darkmode-btn {
+  background-color: var(--gray);
   width: 2rem;
   height: 2rem;
-  background-color: var(--gray);
   border-radius: 8px;
 }
 
@@ -26,14 +26,16 @@ body {
   background-color: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
-
 }
+
 .dividingwidth {
   width: 20px;
 }
+
 .linewidth {
   width: 2px;
 }
+
 .bolwidth {
   width: 5px;
 }
@@ -45,12 +47,27 @@ body {
   padding-top: 0.5rem;
 }
 
+.firstdivideline{
+  height: 100%;
+  margin-top: 10px;
+  padding-top: 0;
+}
+
 .dividebol{
   background-color: var(--bg);
   border: 1px solid var(--text);
   height: 5px;
   border-radius: 5px;
   margin-left: -1.5px;
+}
+
+.firstdivideline .dividebol{
+  background-color: var(--text);
+}
+
+.lastdivideline {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .container {
