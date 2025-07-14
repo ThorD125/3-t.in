@@ -1,8 +1,8 @@
 import CyberSecurityNotes from '../assets/images/CyberResearchNotes.svg'
 import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.svg'
-import GitHub from '../assets/images/GitHub.svg'
-import LinkedIn from '../assets/images/LinkedIn.svg'
+import GitHubIcon from '../assets/images/GitHub.jsx'
 import { useEffect, useState } from "react";
+import LinkedInIcon from '../assets/images/LinkedIn.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 
@@ -79,7 +79,7 @@ function Footer() {
     <a href="https://github.com/ThorD125">GitHub</a>
     <div className="flex pt-2">
       <div className='footerleft'>
-        <img src={GitHub} alt="github qr" />
+        <GitHubIcon className="qr-icon" />
       </div>
       {spacex()}
       {spacex()}
@@ -227,7 +227,7 @@ function BodyRight() {
     <h3>Socials</h3>
     <a href="https://www.linkedin.com/in/thor-demeestere/">LinkedIn</a>
     <div className="socialqr pt-2">
-      <img src={LinkedIn} alt="linkedin qr" />
+      <LinkedInIcon className="qr-icon" />
     </div>
   </div>
 }
