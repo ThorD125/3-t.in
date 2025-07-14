@@ -95,17 +95,20 @@ function Footer() {
   </div>
 }
 
-function dividingPart() {
+function dividingPart(first) {
   return (
     <>
-      {spacex()}
-      {spacex()}
+      <div className={`dividecontainer dividingwidth${debug ? " bg-green-500" : ""}`}>
+        <div className={`divideline linewidth${debug ? " bg-blue-500" : ""}`}>
+          <div className={`dividebol bolwidth${debug ? " bg-red-500" : ""}`}></div>
+        </div>
+      </div>
     </>
   );
 }
 
 
-function Experience(date, title, description) {
+function Experience(date, title, description, first=false) {
   return <div>
     <div className="flex">
       <div className="date">
@@ -113,7 +116,7 @@ function Experience(date, title, description) {
           {date}
         </p>
       </div>
-      {dividingPart()}
+      {dividingPart(first)}
       <div className="description">
         <h4>{title}</h4>
         <p>{description}</p>
@@ -123,7 +126,7 @@ function Experience(date, title, description) {
   </div>
 }
 
-function Education(date, title, description, subtitle) {
+function Education(date, title, description, subtitle, first=false) {
   return <div>
     <div className="flex">
       <div className="date">
@@ -131,7 +134,7 @@ function Education(date, title, description, subtitle) {
           {date}
         </p>
       </div>
-      {dividingPart()}
+      {dividingPart(first)}
       <div className="description">
         <h4>{title}</h4>
         <p>{subtitle}</p>
@@ -142,13 +145,13 @@ function Education(date, title, description, subtitle) {
   </div>
 }
 
-function project(img, title, description, link) {
+function project(img, title, description, link, first=false) {
   return <div>
     <div className="flex">
       <div className="date p-6">
         <img src={img} alt="projectimage" />
       </div>
-      {dividingPart()}
+      {dividingPart(first)}
       <div className="description">
         <h4>{title}</h4>
         <p>{description}</p>
@@ -162,19 +165,19 @@ function project(img, title, description, link) {
 function BodyLeft() {
   return <div className='w-full'>
     <h3>Experience</h3>
-    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer")}
+    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer", true)}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
     {Experience("03/21-08/22", "Tom Broucke", "Assisted a freelance WordPress web developer, learned modern web design principles and contributed to building and maintaining websites.")}
 
     {spacey()}
 
     <h3>Education</h3>
-    {Education("08/21-06/24", "Bachelor Cyber Security Professional", "Howest Bruges - University of Applied Sciences Technology", "Applied Computer Science")}
+    {Education("08/21-06/24", "Bachelor Cyber Security Professional", "Howest Bruges - University of Applied Sciences Technology", "Applied Computer Science", true)}
 
     {spacey()}
 
     <h3>Personal projects</h3>
-    {project(CyberSecurityNotes, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes")}
+    {project(CyberSecurityNotes, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes", true)}
     {project(TryHackmeLabs, "TryHackMe Cyber Labs", "Hands-on cybersecurity training through virtual labs and challenges.", "https://tryhackme.com/p/ThorD125")}
     {spacey()}
   </div>

@@ -28,6 +28,30 @@ body {
   transition: background 0.3s, color 0.3s;
 
 }
+.dividingwidth {
+  width: 20px;
+}
+.linewidth {
+  width: 2px;
+}
+.bolwidth {
+  width: 5px;
+}
+
+.divideline{
+  background-color: var(--text);
+  height: calc(100% + 10px);
+  margin: auto;
+  padding-top: 0.5rem;
+}
+
+.dividebol{
+  background-color: var(--bg);
+  border: 1px solid var(--text);
+  height: 5px;
+  border-radius: 5px;
+  margin-left: -1.5px;
+}
 
 .container {
   margin: auto;
