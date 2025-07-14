@@ -4,7 +4,7 @@ import GitHubIcon from '../assets/images/GitHub.jsx'
 import { useEffect, useState } from "react";
 import LinkedInIcon from '../assets/images/LinkedIn.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 
 var debug = false;
 
@@ -29,7 +29,7 @@ function spacey() {
 }
 
 function darkButton() {
- const [dark, setDark] = useState(() => {
+  const [dark, setDark] = useState(() => {
     return localStorage.getItem("dark") === "true"; // stored as string
   });
   useEffect(() => {
@@ -39,7 +39,7 @@ function darkButton() {
 
   return <div>
     <button className="darkmode-btn" onClick={() => setDark(!dark)}>
-      <FontAwesomeIcon icon={dark ? faSun : faMoon} id="btn-icon"/>
+      <FontAwesomeIcon icon={dark ? faSun : faMoon} id="btn-icon" />
     </button>
   </div>
 }
@@ -75,14 +75,12 @@ function Body() {
 
 function Footer() {
   return <div>
-
     <a href="https://github.com/ThorD125">GitHub</a>
     <div className="flex pt-2">
       <div className='footerleft'>
         <GitHubIcon className="qr-icon" />
       </div>
-      {spacex()}
-      {spacex()}
+      {dividingPart()}
       <div className='w-full m-auto'>
         <p>
           Other projects are available on my GitHub, including:
@@ -97,17 +95,25 @@ function Footer() {
   </div>
 }
 
+function dividingPart() {
+  return (
+    <>
+      {spacex()}
+      {spacex()}
+    </>
+  );
+}
+
+
 function Experience(date, title, description) {
   return <div>
-
     <div className="flex">
       <div className="date">
         <p>
           {date}
         </p>
       </div>
-      {spacex()}
-      {spacex()}
+      {dividingPart()}
       <div className="description">
         <h4>{title}</h4>
         <p>{description}</p>
@@ -117,8 +123,7 @@ function Experience(date, title, description) {
   </div>
 }
 
-function Education(date, title, subtitle, description) {
-
+function Education(date, title, description, subtitle) {
   return <div>
     <div className="flex">
       <div className="date">
@@ -126,8 +131,7 @@ function Education(date, title, subtitle, description) {
           {date}
         </p>
       </div>
-      {spacex()}
-      {spacex()}
+      {dividingPart()}
       <div className="description">
         <h4>{title}</h4>
         <p>{subtitle}</p>
@@ -144,8 +148,7 @@ function project(img, title, description, link) {
       <div className="date p-6">
         <img src={img} alt="projectimage" />
       </div>
-      {spacex()}
-      {spacex()}
+      {dividingPart()}
       <div className="description">
         <h4>{title}</h4>
         <p>{description}</p>
@@ -166,7 +169,7 @@ function BodyLeft() {
     {spacey()}
 
     <h3>Education</h3>
-    {Education("08/21-06/24", "Bachelor Cyber Security Professional", "Applied Computer Science", "Howest Bruges - University of Applied Sciences Technology")}
+    {Education("08/21-06/24", "Bachelor Cyber Security Professional", "Howest Bruges - University of Applied Sciences Technology", "Applied Computer Science")}
 
     {spacey()}
 
