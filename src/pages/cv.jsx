@@ -2,8 +2,12 @@ import CyberSecurityNotes from '../assets/images/CyberResearchNotes.svg'
 import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.svg'
 import GitHub from '../assets/images/GitHub.svg'
 import LinkedIn from '../assets/images/LinkedIn.svg'
+import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 
 var debug = false;
+
 
 export default function Home() {
   return <div className={debug ? "bg-blue-500" : ""}>
@@ -24,6 +28,21 @@ function spacey() {
   return <div className={`spaceheight${debug ? " bg-red-500" : ""}`}></div>;
 }
 
+function darkButton() {
+ const [dark, setDark] = useState(() => {
+    return localStorage.getItem("dark") === "true"; // stored as string
+  });
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", dark);
+    localStorage.setItem("dark", dark);
+  }, [dark]);
+
+  return <div>
+    <button className="darkmode-btn" onClick={() => setDark(!dark)}>
+      <FontAwesomeIcon icon={dark ? faSun : faMoon} id="btn-icon"/>
+    </button>
+  </div>
+}
 
 function Header() {
   return <div className="flex justify-between">
@@ -33,6 +52,7 @@ function Header() {
       <span>°05/05/2003</span>
     </div>
     <div className="text-right mt-auto">
+      {darkButton()}
       <p>+32 0489 71 44 63</p>
       <p>thor.demeestere@gmail.com</p>
       <p>Menen, Driver license B</p>
@@ -142,7 +162,6 @@ function BodyLeft() {
     {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer")}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
     {Experience("03/21-08/22", "Tom Broucke", "Assisted a freelance WordPress web developer, learned modern web design principles and contributed to building and maintaining websites.")}
-    {Experience("", "Various personal projects", "")}
 
     {spacey()}
 
