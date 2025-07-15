@@ -1,0 +1,38 @@
+:root {
+  --black: rgb(14, 14, 14);
+  --white: rgb(255, 255, 255);
+  --bg: var(--white);
+  --text: var(--black);
+  --gray: rgb(242, 242, 242);
+  --qrCode: var(--black)
+}
+
+.dark-mode {
+  --bg: var(--black);
+  --text: var(--white);
+  --qrCode: var(--white);
+  --gray: rgb(25, 25, 25);
+}
+
+.darkmode-btn {
+  background-color: var(--gray);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.divideline{
+  background-color: var(--text);
+}
+
+.dividebol{
+  background-color: var(--bg);
+  border: 1px solid var(--text);
+}
+
+.firstdivideline .dividebol{
+  background-color: var(--text);
+}

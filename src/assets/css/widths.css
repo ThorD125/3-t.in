@@ -1,0 +1,95 @@
+.darkmode-btn {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dividingwidth {
+  width: 20px;
+}
+
+.linewidth {
+  width: 2px;
+}
+
+.bolwidth {
+  width: 5px;
+}
+
+.divideline{
+  height: calc(100% + 10px);
+}
+
+.firstdivideline{
+  height: calc(100% - 0.5rem + 10px);
+}
+
+.dividebol{
+  height: 5px;
+}
+
+.w-full svg{
+  width: 100%;
+  height: fit-content;
+}
+
+html {
+  width: 210mm;
+  max-width: 100vw ;
+}
+
+.spacewidth {
+  width: 10px;
+}
+
+.spaceheight {
+  height: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.lefbody {
+  width: calc((100% - 20px) / 495 * (75 + 265));
+}
+
+.rightbody {
+  width: calc((100% - 20px) / 495 * 155);
+}
+
+.date {
+  width: calc((100% - 20px) / 340 * 75);
+}
+
+.description {
+  width: calc((100% - 20px) / 340 * 265);
+}
+
+.footerleft {
+  width: calc((100% - 20px) / 495 * 75);
+}
+
+.socialqr {
+  width: calc((100% - 20px) / 155 *  70);
+}
+
+li {
+  width: calc(100% - 15px);
+}
+
+
+@media (width <= 48rem) { 
+  .socialqr,
+  .footerleft,
+  .lefbody,
+  .rightbody {
+    width: 100%;
+  }
+  .spacewidth {
+    width: 100%;
+    height: 10px;
+  }
+  svg {
+    max-width: 40%;
+  }
+}

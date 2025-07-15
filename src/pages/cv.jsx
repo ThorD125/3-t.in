@@ -158,11 +158,15 @@ function project(img, title, description, link, first=false, last=false) {
       <div className="date p-6">
         <img src={img} alt="projectimage" />
       </div>
-      {dividingPart(first, last)}
-      <div className="description">
-        <h4>{title}</h4>
-        <p>{description}</p>
-        <p><a href={link}>{link}</a></p>
+    {spacex()}
+    {spacex()}
+
+      <div className="description flex wrap items-center">
+        <div>
+          <h4>{title}</h4>
+          <p>{description}</p>
+          <p><a href={link}>{link}</a></p>
+        </div>
       </div>
     </div>
     {spacey()}
@@ -172,7 +176,7 @@ function project(img, title, description, link, first=false, last=false) {
 function BodyLeft() {
   return <div className='w-full'>
     <h3>Experience</h3>
-    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer", true)}
+    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer Provided first- and second-line support for infrastructure, applications, and end-user systems. Troubleshot a variety of technical issues, helping ensure stable and efficient client environments.", true)}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
     {Experience("03/21-08/22", "Tom Broucke", "Assisted a freelance WordPress web developer, learned modern web design principles and contributed to building and maintaining websites.", false, true)}
 
@@ -200,40 +204,41 @@ function BodyRight() {
     {spacey()}
 
     <h3>Skills</h3>
-    <ul>
-      <li>Docker</li>
-      <li>Linux</li>
-      <li>Wireshark</li>
-      <li>Typescript</li>
-      <li>Burpsuite</li>
-      <li>Python</li>
-      <li>Extensive IT knowledge</li>
-      <li>Eager to learn</li>
-    </ul>
+    {list([
+      "Docker",
+      "Linux",
+      "Wireshark",
+      "Typescript",
+      "Burpsuite",
+      "Python",
+      "Extensive IT knowledge",
+      "Eager to learn",
+    ])}
 
     {spacey()}
 
     <h3>Certifications</h3>
-    <ul>
-      <li>FIRST CVSS v4.0</li>
-      <li>LogicMonitor Associate</li>
-      <li>M365: Fundamentals</li>
-      <li>AZ-900</li>
-      <li>SC-900</li>
-      <li>FCA FortiGate Operator</li>
-    </ul>
+    {list([
+      "FIRST CVSS v4.0",
+      "LogicMonitor Associate",
+      "M365: Fundamentals",
+      "AZ-900",
+      "SC-900",
+      "FCA FortiGate Operator",
+    ])}
+
 
     {spacey()}
 
     <h3>Interests</h3>
-    <ul>
-      <li>Security</li>
-      <li>Music</li>
-      <li>Film</li>
-      <li>Hardware</li>
-      <li>Software</li>
-      <li>Development</li>
-    </ul>
+    {list([
+      "Security",
+      "Music",
+      "Film",
+      "Hardware",
+      "Software",
+      "Development",
+    ])}
 
     {spacey()}
 
@@ -243,4 +248,14 @@ function BodyRight() {
       <LinkedInIcon className="qr-icon" />
     </div>
   </div>
+}
+
+function list(listitems) {
+  return (
+    <ul>
+      {listitems.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
 }

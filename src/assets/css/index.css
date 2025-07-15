@@ -1,0 +1,22 @@
+
+.container {
+  margin: auto;
+}
+
+html {
+  margin: auto;
+  padding: 30px;
+  size: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: underline;
+}
+
+li {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 15px;
+}
+
