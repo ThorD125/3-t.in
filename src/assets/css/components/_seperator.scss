@@ -1,6 +1,4 @@
 .divideline {
-  margin: auto;
-  padding-top: 0.5rem;
   height: calc(100% + 10px);
   background-color: var(--text);
 }
@@ -14,11 +12,12 @@
   height: 5px;
   background-color: var(--bg);
   border: 1px solid var(--text);
-  border-radius: 5px;
   margin-left: -1.5px;
 }
 
 .firstdivideline {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   margin-top: 0.5rem;
   padding-top: 0;
   height: calc(100% - 0.5rem + 10px);

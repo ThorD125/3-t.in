@@ -5,22 +5,5 @@
 @use 'components/seperator';
 
 html {
-  margin: auto;
-  padding: 30px;
   size: 100vh;
-  overflow-x: hidden;
-}
-
-.container {
-  margin: auto;
-}
-
-a {
-  text-decoration: underline;
-}
-
-li {
-  display: list-item;
-  list-style-type: disc;
-  margin-left: 15px;
 }

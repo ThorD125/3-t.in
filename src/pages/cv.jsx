@@ -1,5 +1,5 @@
-import CyberSecurityNotes from '../assets/images/CyberResearchNotes.svg'
-import TryHackmeLabs from '../assets/images/Tryhackme-Cyber-Labs.svg'
+import CyberResearchNotesIcon from '../assets/images/CyberResearchNotes.jsx'
+import TryhackmeIcon from '../assets/images/Tryhackme-Cyber-Labs.jsx'
 import GitHubIcon from '../assets/images/GitHub.jsx'
 import { useEffect, useState } from "react";
 import LinkedInIcon from '../assets/images/LinkedIn.jsx'
@@ -10,14 +10,15 @@ var debug = false;
 
 
 export default function Home() {
-  return <div className={debug ? "bg-blue-500" : ""}>
+  return <div className={debug ? " bg-blue-500" : ""}>
     {Header()}
     {spacey()}
-    <div className='hidden md:block'>
     {spacey()}
-    </div>
     {Body()}
     {spacey()}
+    <div className='md:hidden'>
+      {spacey()}
+    </div>
     {Footer()}
   </div>
 }
@@ -40,7 +41,7 @@ function darkButton() {
   }, [dark]);
 
   return <div>
-    <button className="darkmode-btn" onClick={() => setDark(!dark)}>
+    <button className="darkmode-btn rounded" onClick={() => setDark(!dark)}>
       <FontAwesomeIcon icon={dark ? faSun : faMoon} id="btn-icon" />
     </button>
   </div>
@@ -70,7 +71,7 @@ function Body() {
     {spacex()}
     <div className='hidden md:block'>
       {spacex()}
-      </div>
+    </div>
     <div className="rightbody">
       {BodyRight()}
     </div>
@@ -79,24 +80,25 @@ function Body() {
 
 function Footer() {
   return <div>
-    <a href="https://github.com/ThorD125">GitHub</a>
+    <a className='underline' href="https://github.com/ThorD125">GitHub</a>
     <div className="md:flex pt-2">
       <div className='footerleft'>
         <GitHubIcon className="qr-icon" />
       </div>
       {spacex()}
       <div className='hidden md:block'>
-      {spacex()}
+        {spacex()}
       </div>
       <div className='w-full m-auto'>
         <p>
           Other projects are available on my GitHub, including:
         </p>
-        <ul className='list-disc'>
-          <li>Chrome extension to auto-play Shorts/Reels</li>
-          <li>Quiz training platform with randomized questions and answers</li>
-          <li>A Python-based Discord utility bot with various slash commands.</li>
-        </ul>
+        
+        {list([
+          "Chrome extension to auto-play Shorts/Reels.",
+          "Quiz training platform with randomized questions and answers.",
+          "A Python-based Discord utility bot with various slash commands.",
+        ])}
       </div>
     </div>
   </div>
@@ -106,8 +108,8 @@ function dividingPart(first, last) {
   return (
     <>
       <div className={`dividecontainer dividingwidth${debug ? " bg-green-500" : ""}`}>
-        <div className={`divideline linewidth${first ? " firstdivideline" : ""}${last ? " lastdivideline" : ""}${debug ? " bg-blue-500" : ""}`}>
-          <div className={`dividebol bolwidth${debug ? " bg-red-500" : ""}`}></div>
+        <div className={`divideline m-auto pt-[0.5rem] linewidth${first ? " firstdivideline" : ""}${last ? " lastdivideline" : ""}${debug ? " bg-blue-500" : ""}`}>
+          <div className={`dividebol rounded bolwidth${debug ? " bg-red-500" : ""}`}></div>
         </div>
       </div>
     </>
@@ -115,7 +117,7 @@ function dividingPart(first, last) {
 }
 
 
-function Experience(date, title, description, first=false, last=false) {
+function Experience(date, title, description, first = false, last = false) {
   return <div>
     <div className="flex">
       <div className="date">
@@ -133,7 +135,7 @@ function Experience(date, title, description, first=false, last=false) {
   </div>
 }
 
-function Education(date, title, description, subtitle, first=false, last=false) {
+function Education(date, title, description, subtitle, first = false, last = false) {
   return <div>
     <div className="flex">
       <div className="date">
@@ -152,20 +154,20 @@ function Education(date, title, description, subtitle, first=false, last=false) 
   </div>
 }
 
-function project(img, title, description, link, first=false, last=false) {
+function project(TheImg, title, description, link, first = false, last = false) {
   return <div>
     <div className="flex">
-      <div className="date p-6">
-        <img src={img} alt="projectimage" />
+      <div className="date md:p-3 lg:p-6 flex items-center">
+        <TheImg/>
       </div>
-    {spacex()}
-    {spacex()}
+      {spacex()}
+      {spacex()}
 
       <div className="description flex wrap items-center">
         <div>
           <h4>{title}</h4>
           <p>{description}</p>
-          <p><a href={link}>{link}</a></p>
+          <p><a className='underline' href={link}>{link}</a></p>
         </div>
       </div>
     </div>
@@ -188,9 +190,11 @@ function BodyLeft() {
     {spacey()}
 
     <h3>Personal projects</h3>
-    {project(CyberSecurityNotes, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes", true)}
-    {project(TryHackmeLabs, "TryHackMe Cyber Labs", "Hands-on cybersecurity training through virtual labs and challenges.", "https://tryhackme.com/p/ThorD125", false, true)}
-    {spacey()}
+    {project(CyberResearchNotesIcon, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes", true)}
+    {project(TryhackmeIcon, "TryHackMe Cyber Labs", "Hands-on cybersecurity training through virtual labs and challenges.", "https://tryhackme.com/p/ThorD125", false, true)}
+    <div className='md:hidden'>
+      {spacey()}
+    </div>
   </div>
 }
 
@@ -201,6 +205,7 @@ function BodyRight() {
     <p>NL Dutch - Native</p>
     <p>EN English - Fluent</p>
 
+    {spacey()}
     {spacey()}
 
     <h3>Skills</h3>
@@ -216,6 +221,7 @@ function BodyRight() {
     ])}
 
     {spacey()}
+    {spacey()}
 
     <h3>Certifications</h3>
     {list([
@@ -229,6 +235,7 @@ function BodyRight() {
 
 
     {spacey()}
+    {spacey()}
 
     <h3>Interests</h3>
     {list([
@@ -241,9 +248,10 @@ function BodyRight() {
     ])}
 
     {spacey()}
+    {spacey()}
 
     <h3>Socials</h3>
-    <a href="https://www.linkedin.com/in/thor-demeestere/">LinkedIn</a>
+    <a className='underline' href="https://www.linkedin.com/in/thor-demeestere/">LinkedIn</a>
     <div className="socialqr pt-2">
       <LinkedInIcon className="qr-icon" />
     </div>
@@ -254,7 +262,7 @@ function list(listitems) {
   return (
     <ul>
       {listitems.map((item, index) => (
-        <li key={index}>{item}</li>
+        <li key={index} className='ml-[15px] list-disc list-item'>{item}</li>
       ))}
     </ul>
   );
