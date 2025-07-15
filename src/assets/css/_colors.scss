@@ -14,25 +14,9 @@
   --gray: rgb(25, 25, 25);
 }
 
-.darkmode-btn {
-  background-color: var(--gray);
-}
 
 body {
   background-color: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
-}
-
-.divideline{
-  background-color: var(--text);
-}
-
-.dividebol{
-  background-color: var(--bg);
-  border: 1px solid var(--text);
-}
-
-.firstdivideline .dividebol{
-  background-color: var(--text);
 }

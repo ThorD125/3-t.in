@@ -1,37 +1,3 @@
-.darkmode-btn {
-  width: 2rem;
-  height: 2rem;
-}
-
-.dividingwidth {
-  width: 20px;
-}
-
-.linewidth {
-  width: 2px;
-}
-
-.bolwidth {
-  width: 5px;
-}
-
-.divideline{
-  height: calc(100% + 10px);
-}
-
-.firstdivideline{
-  height: calc(100% - 0.5rem + 10px);
-}
-
-.dividebol{
-  height: 5px;
-}
-
-.w-full svg{
-  width: 100%;
-  height: fit-content;
-}
-
 html {
   width: 210mm;
   max-width: 100vw ;
@@ -43,10 +9,6 @@ html {
 
 .spaceheight {
   height: 10px;
-}
-
-img {
-  width: 100%;
 }
 
 .lefbody {
@@ -77,6 +39,11 @@ li {
   width: calc(100% - 15px);
 }
 
+img,
+svg{
+  width: 100%;
+  height: fit-content;
+}
 
 @media (width <= 48rem) { 
   .socialqr,

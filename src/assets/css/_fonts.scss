@@ -8,18 +8,6 @@ html {
   /* font-size: 14px; */
 }
 
-h1,
-h3,
-h4 {
-  font-style: bold;
-  font-weight: 700;
-}
-
-h2,
-span {
-  font-style: normal;
-  font-weight: 300;
-}
 h1 {
   font-size: 2.5rem;
 }
@@ -32,10 +20,7 @@ h3 {
   font-size: 1.16rem;
 }
 
-h4 {
-  font-size: 1rem;
-}
-
+h4,
 p,
 li,
 a {
@@ -44,4 +29,18 @@ a {
 
 span {
   font-size: 0.91rem;
+}
+
+
+h1,
+h3,
+h4 {
+  font-style: bold;
+  font-weight: 700;
+}
+
+h2,
+span {
+  font-style: normal;
+  font-weight: 300;
 }

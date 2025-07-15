@@ -1,13 +1,18 @@
-
-.container {
-  margin: auto;
-}
+@use 'colors';
+@use 'fonts';
+@use 'widths';
+@use 'components/darkmode_button';
+@use 'components/seperator';
 
 html {
   margin: auto;
   padding: 30px;
   size: 100vh;
   overflow-x: hidden;
+}
+
+.container {
+  margin: auto;
 }
 
 a {
@@ -19,4 +24,3 @@ li {
   list-style-type: disc;
   margin-left: 15px;
 }
-
