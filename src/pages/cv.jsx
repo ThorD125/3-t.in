@@ -13,7 +13,9 @@ export default function Home() {
   return <div className={debug ? "bg-blue-500" : ""}>
     {Header()}
     {spacey()}
+    <div className='hidden md:block'>
     {spacey()}
+    </div>
     {Body()}
     {spacey()}
     {Footer()}
@@ -45,13 +47,13 @@ function darkButton() {
 }
 
 function Header() {
-  return <div className="flex justify-between">
+  return <div className="md:flex justify-between">
     <div>
       <h1>Thor Demeestere</h1>
       <h2>Developer & Cyber Security Researcher</h2>
       <span>°05/05/2003</span>
     </div>
-    <div className="text-right mt-auto">
+    <div className="md:text-right mt-auto">
       {darkButton()}
       <p>+32 0489 71 44 63</p>
       <p>thor.demeestere@gmail.com</p>
@@ -61,12 +63,14 @@ function Header() {
 }
 
 function Body() {
-  return <div className="flex w-full">
+  return <div className="md:flex w-full">
     <div className="lefbody">
       {BodyLeft()}
     </div>
     {spacex()}
-    {spacex()}
+    <div className='hidden md:block'>
+      {spacex()}
+      </div>
     <div className="rightbody">
       {BodyRight()}
     </div>
@@ -76,12 +80,14 @@ function Body() {
 function Footer() {
   return <div>
     <a href="https://github.com/ThorD125">GitHub</a>
-    <div className="flex pt-2">
+    <div className="md:flex pt-2">
       <div className='footerleft'>
         <GitHubIcon className="qr-icon" />
       </div>
       {spacex()}
+      <div className='hidden md:block'>
       {spacex()}
+      </div>
       <div className='w-full m-auto'>
         <p>
           Other projects are available on my GitHub, including:

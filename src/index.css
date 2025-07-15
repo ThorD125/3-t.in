@@ -93,6 +93,8 @@ html {
   font-size: 12px;
   /* font-size: 14px; */
   size: 100vh;
+  max-width: 100vw ;
+  overflow-x: hidden;
 }
 
 h1,
@@ -179,4 +181,21 @@ li {
   list-style-type: disc;
   width: calc(100% - 15px);
   margin-left: 15px;
+}
+
+
+@media (width <= 48rem) { 
+  .socialqr,
+  .footerleft,
+  .lefbody,
+  .rightbody {
+    width: 100%;
+  }
+  .spacewidth {
+    width: 100%;
+    height: 10px;
+  }
+  svg {
+    max-width: 40%;
+  }
 }
