@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "echo '3-t.in' > dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
