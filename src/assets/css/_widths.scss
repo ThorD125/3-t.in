@@ -1,6 +1,6 @@
 html {
   width: 210mm;
-  max-width: 100vw ;
+  max-width: 100%;
 }
 
 .spacewidth {
@@ -27,30 +27,38 @@ html {
   width: calc((100% - 20px) / 340 * 265);
 }
 
+.description a {
+  display: flex;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
 .footerleft {
   width: calc((100% - 20px) / 495 * 75);
 }
 
 .socialqr {
-  width: calc((100% - 20px) / 155 *  70);
+  width: calc((100% - 20px) / 155 * 70);
 }
 
 li {
   width: calc(100% - 15px);
 }
 
-svg{
+svg {
   width: 100%;
   height: fit-content;
 }
 
-@media (width <= 48rem) { 
+@media (width <=48rem) {
+
   .socialqr,
   .footerleft,
   .lefbody,
   .rightbody {
     width: 100%;
   }
+
   svg {
     max-width: 40%;
   }

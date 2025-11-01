@@ -13,6 +13,8 @@ export default function Home() {
   return <div className={debug ? " bg-blue-500" : ""}>
     {Header()}
     {spacey()}
+    {AboutSelf()}
+    {spacey()}
     {spacey()}
     {Body()}
     {spacey()}
@@ -63,6 +65,13 @@ function Header() {
   </div>
 }
 
+function AboutSelf() {
+  return <div>
+    <h3>About</h3>
+    Ik ben een gepassioneerde softwareontwikkelaar met een sterke interesse in cybersecurity. Ik verken en experimenteer voortdurend met tools uit de Hak5-toolkit om mijn technische vaardigheden te versterken en voorop te blijven lopen bij opkomende dreigingen. Buiten het werk leid ik een actief leven — ik ben een fanatieke zwemmer die graag mijn grenzen verlegt in het zwembad.
+  </div>
+}
+
 function Body() {
   return <div className="md:flex w-full">
     <div className="lefbody">
@@ -93,7 +102,7 @@ function Footer() {
         <p>
           Other projects are available on my GitHub, including:
         </p>
-        
+
         {list([
           "Chrome extension to auto-play Shorts/Reels.",
           "Quiz training platform with randomized questions and answers.",
@@ -158,7 +167,7 @@ function project(TheImg, title, description, link, first = false, last = false) 
   return <div>
     <div className="flex">
       <div className="date md:p-3 lg:p-6 flex items-center">
-        <TheImg/>
+        <TheImg />
       </div>
       {spacex()}
       {spacex()}
