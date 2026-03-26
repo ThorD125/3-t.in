@@ -187,7 +187,8 @@ function project(TheImg, title, description, link, first = false, last = false) 
 function BodyLeft() {
   return <div className='w-full'>
     <h3>Experience</h3>
-    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer Provided first- and second-line support for infrastructure, applications, and end-user systems. Troubleshot a variety of technical issues, helping ensure stable and efficient client environments.", true)}
+    {Experience("11/25-present", "Vandenabeele", "System/Automation Engineer focused on maintaining and optimizing client infrastructure to ensure high availability, while proactively developing automation solutions to streamline repetitive processes and improve operational efficiency.", true)}
+    {Experience("09/24-06/25", "Savaco", "Servicedesk & Support Engineer Provided first- and second-line support for infrastructure, applications, and end-user systems. Troubleshot a variety of technical issues, helping ensure stable and efficient client environments.")}
     {Experience("07/23-03/24", "Jimber", "Software Developer Internship & Student Job Helped implement missing features in a private file cloud system with end-to-end encryption using private keys.Skills 03/21-08/22")}
     {Experience("03/21-08/22", "Tom Broucke", "Assisted a freelance WordPress web developer, learned modern web design principles and contributed to building and maintaining websites.", false, true)}
 
@@ -198,12 +199,12 @@ function BodyLeft() {
 
     {spacey()}
 
-    <h3>Personal projects</h3>
+    {/* <h3>Personal projects</h3>
     {project(CyberResearchNotesIcon, "Cyber Security Research Notes", "", "https://github.com/ThorD125/research-notes", true)}
     {project(TryhackmeIcon, "TryHackMe Cyber Labs", "Hands-on cybersecurity training through virtual labs and challenges.", "https://tryhackme.com/p/ThorD125", false, true)}
     <div className='md:hidden'>
       {spacey()}
-    </div>
+    </div> */}
   </div>
 }
 
