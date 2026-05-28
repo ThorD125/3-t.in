@@ -68,7 +68,7 @@ function Header() {
 function AboutSelf() {
   return <div>
     <h3>About</h3>
-    Ik ben een gepassioneerde softwareontwikkelaar met een sterke interesse in cybersecurity. Ik verken en experimenteer voortdurend met tools uit de Hak5-toolkit om mijn technische vaardigheden te versterken en voorop te blijven lopen bij opkomende dreigingen. Buiten het werk leid ik een actief leven — ik ben een fanatieke zwemmer die graag mijn grenzen verlegt in het zwembad.
+    I am a passionate system engineer with a strong interest in cybersecurity. I constantly explore and experiment with new tools to enhance my technical skills and stay ahead of emerging threats. Outside of work, I lead an active life — I am an avid swimmer who loves pushing my limits in the pool.
   </div>
 }
 
